@@ -1,0 +1,4 @@
+*.exe
+executables/
+*.out
+activity3-cricket.cpp
