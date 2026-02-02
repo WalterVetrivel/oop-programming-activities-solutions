@@ -31,33 +31,29 @@ int main()
     cout << "Please enter the frequency: ";
     cin >> inputFreq;
 
-    if (stringName == 'e')
+    switch (stringName)
     {
+    case 'e':
         tune(inputFreq, E4);
-    }
-    else if (stringName == 'b')
-    {
+        break;
+    case 'b':
         tune(inputFreq, B3);
-    }
-    else if (stringName == 'g')
-    {
+        break;
+    case 'g':
         tune(inputFreq, G3);
-    }
-    else if (stringName == 'd')
-    {
+        break;
+    case 'd':
         tune(inputFreq, D3);
-    }
-    else if (stringName == 'a')
-    {
+        break;
+    case 'a':
         tune(inputFreq, A2);
-    }
-    else if (stringName == 'E')
-    {
+        break;
+    case 'E':
         tune(inputFreq, E2);
-    }
-    else
-    {
-        cout << "Invalid string. Please enter a valid string name.";
+        break;
+    default:
+        cout << "Invalid string.";
+        break;
     }
 
     return 0;
