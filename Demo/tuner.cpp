@@ -15,46 +15,58 @@ void tune(double, double);
 
 int main()
 {
-    double E4 = 329.63; // will be represented as e in the input
-    double B3 = 246.94; // will be represented as b in the input
-    double G3 = 196.00; // will be represented as g in the input
-    double D3 = 146.83; // will be represented as d in the input
-    double A2 = 110.00; // will be represented as a in the input
-    double E2 = 82.41;  // will be represented as E in the input
+    const double E4 = 329.63; // will be represented as e in the input
+    const double B3 = 246.94; // will be represented as b in the input
+    const double G3 = 196.00; // will be represented as g in the input
+    const double D3 = 146.83; // will be represented as d in the input
+    const double A2 = 110.00; // will be represented as a in the input
+    const double E2 = 82.41;  // will be represented as E in the input
 
     char stringName;
     double inputFreq;
+    char continueTuning;
 
-    cout << "Enter the string you want to tune: ";
-    cin >> stringName;
-
-    cout << "Please enter the frequency: ";
-    cin >> inputFreq;
-
-    switch (stringName)
+    while (1)
     {
-    case 'e':
-        tune(inputFreq, E4);
-        break;
-    case 'b':
-        tune(inputFreq, B3);
-        break;
-    case 'g':
-        tune(inputFreq, G3);
-        break;
-    case 'd':
-        tune(inputFreq, D3);
-        break;
-    case 'a':
-        tune(inputFreq, A2);
-        break;
-    case 'E':
-        tune(inputFreq, E2);
-        break;
-    default:
-        cout << "Invalid string.";
-        break;
+        cout << "Enter the string you want to tune: ";
+        cin >> stringName;
+
+        cout << "Please enter the frequency: ";
+        cin >> inputFreq;
+
+        switch (stringName)
+        {
+        case 'e':
+            tune(inputFreq, E4);
+            break;
+        case 'b':
+            tune(inputFreq, B3);
+            break;
+        case 'g':
+            tune(inputFreq, G3);
+            break;
+        case 'd':
+            tune(inputFreq, D3);
+            break;
+        case 'a':
+            tune(inputFreq, A2);
+            break;
+        case 'E':
+            tune(inputFreq, E2);
+            break;
+        default:
+            cout << "Invalid string.";
+            break;
+        }
+
+        cout << "\nContinue tuning? (y/n): ";
+        cin >> continueTuning;
+
+        if (continueTuning != 'y')
+            break;
     }
+
+    cout << "Thanks for using the tuner.";
 
     return 0;
 }
